@@ -252,14 +252,7 @@ export default function UploadSection({
       </div>
 
       {/* Main Action CTA */}
-      <div className="glass-panel" style={{ padding: '1.5rem', textAlign: 'center' }}>
-        <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-          Execute Verification Controls
-        </h3>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '1rem' }}>
-          Validates Employee Codes, Bank Account numbers, Amounts, Account changes, Duplicates, and Bank integrity.
-        </p>
-
+      <div className="glass-panel" style={{ padding: '1.25rem', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         {isProcessing ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>
@@ -281,13 +274,6 @@ export default function UploadSection({
             <Play size={16} fill="currentColor" />
             Run Verification Engine
           </button>
-        )}
-
-        {!isReadyToRun && !isProcessing && (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem', color: 'var(--warning)', fontSize: '0.775rem', marginTop: '0.65rem' }}>
-            <AlertCircle size={14} />
-            <span>Upload Payment.xlsx, Bank.xlsx, and Employee Master.xlsx to enable processing.</span>
-          </div>
         )}
       </div>
     </div>
