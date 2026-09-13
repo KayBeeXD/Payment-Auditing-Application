@@ -67,7 +67,7 @@ export default function Header({ activeTab, setActiveTab, isDark, setIsDark, com
       </div>
 
       {/* Corporate Tab Navigation */}
-      <nav style={{ padding: '0 1rem', display: 'flex', gap: '0.25rem', overflowX: 'auto', borderTop: '1px solid var(--border-color)' }}>
+      <nav className="no-scrollbar" style={{ padding: '0 0.5rem', display: 'flex', gap: '0.25rem', overflowX: 'auto', WebkitOverflowScrolling: 'touch', borderTop: '1px solid var(--border-color)', scrollbarWidth: 'none' }}>
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -79,7 +79,7 @@ export default function Header({ activeTab, setActiveTab, isDark, setIsDark, com
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.45rem',
-                padding: '0.75rem 0.9rem',
+                padding: '0.75rem 0.85rem',
                 background: 'transparent',
                 border: 'none',
                 borderBottom: isActive ? '2px solid var(--primary)' : '2px solid transparent',
@@ -88,7 +88,8 @@ export default function Header({ activeTab, setActiveTab, isDark, setIsDark, com
                 fontSize: '0.825rem',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                flexShrink: 0
               }}
             >
               <Icon size={16} color={isActive ? 'var(--primary)' : 'var(--text-dim)'} />

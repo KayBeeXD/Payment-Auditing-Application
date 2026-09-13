@@ -66,7 +66,7 @@ export default function ExceptionManager({ exceptions, onUpdateExceptionStatus }
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Header Banner */}
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div style={{ padding: '0.45rem', borderRadius: '6px', background: 'var(--danger-light)' }}>
             <AlertTriangle size={18} color="var(--danger)" />
@@ -77,19 +77,21 @@ export default function ExceptionManager({ exceptions, onUpdateExceptionStatus }
           </div>
         </div>
 
-        <button 
-          className="btn btn-secondary"
-          onClick={() => exportExceptionReport(exceptions)}
-        >
-          <FileSpreadsheet size={15} />
-          Export Exception Report (.xlsx)
-        </button>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+          <button 
+            className="btn btn-secondary"
+            onClick={() => exportExceptionReport(exceptions)}
+          >
+            <FileSpreadsheet size={15} />
+            Export Exception Report (.xlsx)
+          </button>
+        </div>
       </div>
 
       {/* Filter & Search Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
         {/* Category Pills */}
-        <div style={{ display: 'flex', gap: '0.35rem', overflowX: 'auto', paddingBottom: '0.2rem' }}>
+        <div className="no-scrollbar" style={{ display: 'flex', gap: '0.35rem', overflowX: 'auto', WebkitOverflowScrolling: 'touch', paddingBottom: '0.2rem', maxWidth: '100%', scrollbarWidth: 'none' }}>
           {categories.map(cat => (
             <button
               key={cat.id}
@@ -104,7 +106,8 @@ export default function ExceptionManager({ exceptions, onUpdateExceptionStatus }
                 fontSize: '0.775rem',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                flexShrink: 0
               }}
             >
               {cat.label}
@@ -113,7 +116,7 @@ export default function ExceptionManager({ exceptions, onUpdateExceptionStatus }
         </div>
 
         {/* Search Input */}
-        <div style={{ position: 'relative', minWidth: '240px' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: '300px', flex: '1 1 auto' }}>
           <Search size={15} color="var(--text-dim)" style={{ position: 'absolute', left: '0.65rem', top: '50%', transform: 'translateY(-50%)' }} />
           <input 
             type="text"

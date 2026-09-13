@@ -33,7 +33,7 @@ export default function SettingsView({ config, setConfig }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Top Banner */}
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div style={{ padding: '0.45rem', borderRadius: '6px', background: 'var(--primary-light)' }}>
             <Settings size={18} color="var(--primary)" />
@@ -46,7 +46,7 @@ export default function SettingsView({ config, setConfig }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', alignItems: 'center', flexWrap: 'wrap' }}>
           {savedSuccess && (
             <span style={{ color: 'var(--success)', fontSize: '0.8rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <CheckCircle2 size={15} /> Saved!
@@ -61,7 +61,7 @@ export default function SettingsView({ config, setConfig }) {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '1.25rem' }}>
         {/* Company & Archiving Settings */}
         <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <h4 style={{ fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>

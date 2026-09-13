@@ -52,7 +52,7 @@ export default function Dashboard({ verificationResults }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Executive KPI Cards Header */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(200px, 100%), 1fr))', gap: '1rem' }}>
         {/* Total Volume */}
         <div className="glass-card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -125,7 +125,7 @@ export default function Dashboard({ verificationResults }) {
       </div>
 
       {/* Main Charts & Visual Breakdown Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '1.25rem' }}>
         {/* Pass vs Exception Ratio */}
         <div className="glass-panel" style={{ padding: '1.25rem' }}>
           <h3 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -189,13 +189,13 @@ export default function Dashboard({ verificationResults }) {
       </div>
 
       {/* Quick Action Export Bar */}
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h4 style={{ fontWeight: 600, fontSize: '0.9rem' }}>Export Processed Results</h4>
           <p style={{ fontSize: '0.775rem', color: 'var(--text-muted)' }}>Generate audit-ready Excel worksheets with verification tags and remarks.</p>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.65rem' }}>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
           <button 
             className="btn btn-secondary"
             onClick={() => exportSummaryReport(summary, exceptions)}

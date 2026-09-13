@@ -64,7 +64,7 @@ export default function ReportExportSection({ verificationResults }) {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '1rem' }}>
         {reportCards.map((report, idx) => {
           const Icon = report.icon;
           return (

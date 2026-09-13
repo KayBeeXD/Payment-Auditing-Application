@@ -338,3 +338,73 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* Hide scrollbar utility for clean tab scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive Mobile Layout Media Queries */
+@media (max-width: 768px) {
+  html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .main-app-container {
+    padding: 0 0.5rem !important;
+  }
+
+  .glass-card, .glass-panel {
+    padding: 1rem !important;
+  }
+
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .responsive-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .responsive-banner-buttons {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  .responsive-banner-buttons .btn {
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+  }
+
+  .modal-overlay {
+    padding: 0.5rem !important;
+  }
+
+  .modal-content {
+    max-height: 92vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 0.775rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .responsive-banner-buttons {
+    flex-direction: column !important;
+  }
+
+  .responsive-banner-buttons .btn {
+    width: 100% !important;
+  }
+}
+

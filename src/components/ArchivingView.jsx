@@ -17,7 +17,7 @@ export default function ArchivingView({ archiveHistory, onLoadArchiveRun }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h3 style={{ fontSize: '1.05rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
             <Folder color="var(--primary)" size={18} />
@@ -35,21 +35,21 @@ export default function ArchivingView({ archiveHistory, onLoadArchiveRun }) {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         {archiveHistory.map((run, idx) => (
-          <div key={idx} className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <div key={idx} className="glass-card responsive-banner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
               <div style={{ padding: '0.5rem', borderRadius: '6px', background: 'var(--primary-light)' }}>
                 <HardDrive size={20} color="var(--primary)" />
               </div>
 
               <div>
-                <h4 style={{ fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                <h4 style={{ fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
                   <span>Session Run #{archiveHistory.length - idx}</span>
                   <span className="badge badge-pass" style={{ fontSize: '0.7rem' }}>
                     {run.summary.passRate}% Pass Rate
                   </span>
                 </h4>
 
-                <div style={{ display: 'flex', gap: '0.85rem', fontSize: '0.775rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                <div style={{ display: 'flex', gap: '0.85rem', fontSize: '0.775rem', color: 'var(--text-muted)', marginTop: '0.25rem', flexWrap: 'wrap' }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     <Calendar size={13} /> {new Date(run.summary.runTimestamp).toLocaleDateString()}
                   </span>
@@ -66,7 +66,7 @@ export default function ArchivingView({ archiveHistory, onLoadArchiveRun }) {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.65rem' }}>
+            <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
               <button 
                 className="btn btn-secondary"
                 onClick={() => onLoadArchiveRun(run)}

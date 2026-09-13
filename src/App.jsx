@@ -210,8 +210,8 @@ export default function App() {
   };
 
   return (
-    <div className={isDark ? 'dark-theme' : 'light-theme'} style={{ minHeight: '100vh', paddingBottom: '3rem' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1rem' }}>
+    <div className={isDark ? 'dark-theme' : 'light-theme'} style={{ minHeight: '100vh', paddingBottom: '3rem', width: '100%', overflowX: 'hidden' }}>
+      <div className="main-app-container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1rem', width: '100%' }}>
         <Header 
           activeTab={activeTab} 
           setActiveTab={setActiveTab} 

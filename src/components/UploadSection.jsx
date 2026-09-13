@@ -116,7 +116,7 @@ export default function UploadSection({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Top Banner */}
-      <div className="glass-panel" style={{ padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)' }}>
             Data Import & Reconciliation Workspace
@@ -126,7 +126,7 @@ export default function UploadSection({
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.65rem' }}>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
           <button 
             className="btn btn-secondary"
             onClick={() => {
@@ -153,7 +153,7 @@ export default function UploadSection({
       </div>
 
       {/* 4 File Drag-and-Drop Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: '1rem' }}>
         {fileSlots.map(slot => {
           const Icon = slot.icon;
           const uploaded = filesData[slot.id];

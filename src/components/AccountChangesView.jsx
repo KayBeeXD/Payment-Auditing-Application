@@ -18,7 +18,7 @@ export default function AccountChangesView({ accountChanges }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Header Banner */}
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div style={{ padding: '0.45rem', borderRadius: '6px', background: 'var(--warning-light)' }}>
             <RefreshCw size={18} color="var(--warning)" />
@@ -31,13 +31,15 @@ export default function AccountChangesView({ accountChanges }) {
           </div>
         </div>
 
-        <button 
-          className="btn btn-secondary"
-          onClick={() => exportAccountChangesReport(accountChanges)}
-        >
-          <FileSpreadsheet size={15} />
-          Export Account Changes (.xlsx)
-        </button>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+          <button 
+            className="btn btn-secondary"
+            onClick={() => exportAccountChangesReport(accountChanges)}
+          >
+            <FileSpreadsheet size={15} />
+            Export Account Changes (.xlsx)
+          </button>
+        </div>
       </div>
 
       {/* Account Changes Table */}

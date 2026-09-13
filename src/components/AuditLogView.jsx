@@ -14,7 +14,7 @@ export default function AuditLogView({ auditLogs }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Header Banner */}
-      <div className="glass-panel" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel responsive-banner" style={{ padding: '1.1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div style={{ padding: '0.45rem', borderRadius: '6px', background: 'var(--primary-light)' }}>
             <FileText size={18} color="var(--primary)" />
@@ -27,18 +27,20 @@ export default function AuditLogView({ auditLogs }) {
           </div>
         </div>
 
-        <button 
-          className="btn btn-secondary"
-          onClick={() => exportAuditLogReport(auditLogs)}
-        >
-          <Download size={15} />
-          Export Audit Trail (.xlsx)
-        </button>
+        <div className="responsive-banner-buttons" style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+          <button 
+            className="btn btn-secondary"
+            onClick={() => exportAuditLogReport(auditLogs)}
+          >
+            <Download size={15} />
+            Export Audit Trail (.xlsx)
+          </button>
+        </div>
       </div>
 
       {/* Search Input */}
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <div style={{ position: 'relative', width: '260px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: '300px' }}>
           <Search size={15} color="var(--text-dim)" style={{ position: 'absolute', left: '0.65rem', top: '50%', transform: 'translateY(-50%)' }} />
           <input 
             type="text"
