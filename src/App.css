@@ -1,0 +1,13 @@
+/* Corporate Minimalist Utility Styles */
+.hero {
+  position: relative;
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+}
