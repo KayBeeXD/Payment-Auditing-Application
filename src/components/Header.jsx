@@ -44,7 +44,7 @@ export default function Header({ activeTab, setActiveTab, isDark, setIsDark, com
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <h1 style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-main)' }}>
-                Payment Verification System
+                Payment Verification App
               </h1>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
